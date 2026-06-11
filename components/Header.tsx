@@ -1,13 +1,17 @@
+import Link from 'next/link'
+
 export default function Header() {
   return (
     <header style={styles.header}>
       <div style={styles.inner}>
-        <a href="/" style={styles.logo}>
+        <Link href="/" style={styles.logo}>
           ChineseWellness
-        </a>
+        </Link>
         <nav style={styles.nav}>
-          <a href="/" style={styles.link}>Home</a>
-          <a href="/about" style={styles.link}>About</a>
+          <Link href="/" style={styles.navLink}>Home</Link>
+          <Link href="/posts/goji-berry-superfood" style={styles.navLink}>Articles</Link>
+          <Link href="/about" style={styles.navLink}>About</Link>
+          <Link href="/contact" style={styles.navLink}>Contact</Link>
         </nav>
       </div>
     </header>
@@ -17,19 +21,21 @@ export default function Header() {
 const styles = {
   header: {
     borderBottom: '1px solid #e5e5e5',
-    padding: '1.25rem 0',
     background: '#fff',
-  },
+    position: 'sticky' as const,
+    top: 0,
+    zIndex: 100,
+  } as React.CSSProperties,
   inner: {
     maxWidth: '720px',
     margin: '0 auto',
-    padding: '0 1.5rem',
+    padding: '0.9rem 1.5rem',
     display: 'flex',
-    justifyContent: 'space-between',
     alignItems: 'center',
+    justifyContent: 'space-between',
   },
   logo: {
-    fontSize: '1.25rem',
+    fontSize: '1.2rem',
     fontWeight: 700,
     color: '#1a1a1a',
     textDecoration: 'none',
@@ -37,11 +43,14 @@ const styles = {
   },
   nav: {
     display: 'flex',
-    gap: '1.5rem',
+    gap: '1.4rem',
+    alignItems: 'center',
   },
-  link: {
-    fontSize: '0.95rem',
+  navLink: {
+    fontSize: '0.88rem',
+    fontWeight: 500,
     color: '#555',
     textDecoration: 'none',
-  },
+    transition: 'color 0.15s',
+  } as React.CSSProperties,
 }
