@@ -48,7 +48,7 @@ export default function AdUnit({ slot, format = 'auto', responsive = true, style
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
-        data-ad-client="ca-pub-YOUR-PUBLISHER-ID"
+        data-ad-client="ca-pub-5330611753654284"
         data-ad-slot={slot}
         data-ad-format={format}
         data-full-width-responsive={responsive ? 'true' : undefined}
@@ -65,7 +65,7 @@ export function AdSenseScript() {
   return (
     <script
       async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR-PUBLISHER-ID"
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5330611753654284"
       crossOrigin="anonymous"
     />
   )
