@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://chinesewellness.com',
+    url: 'https://xiaokun888.com',
     siteName: 'ChineseWellness',
   },
   robots: {
@@ -30,7 +32,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body>{children}<Analytics /></body>
+      <body>
+        <Header />
+        <main style={{ minHeight: '70vh' }}>{children}</main>
+        <Footer />
+        <Analytics />
+      </body>
     </html>
   )
 }
